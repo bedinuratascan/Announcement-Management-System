@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MobAnnouncApp.Views.ProfileLikeListPage"
+    Title="Beğenileriniz">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <ListView
+                    x:Name="AnnouncementList"
+                    RowHeight="85"
+                    SeparatorVisibility="Default"
+                    ItemTapped="AnnouncementTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    Padding="10"
+                                    Margin="0,5,0,5">
+                                    <Label
+                                        Text="{Binding Title}"
+                                        FontAttributes="Bold"
+                                        Margin="0,0,0,10" />
+                                    <FlexLayout
+                                        Direction="Row"
+                                        Wrap="NoWrap"
+                                        JustifyContent="SpaceBetween"
+                                        AlignItems="Center"
+                                        AlignContent="Center">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                VerticalTextAlignment="Center"
+                                                Text="&#xf007;"
+                                                FontFamily="fa-regular-400.ttf#Font Awesome 5 Free" />
+                                            <Label
+                                                Text="{Binding User}"
+                                                VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                TextColor="{Binding LikeStatus.FontColor}"
+                                                VerticalTextAlignment="Center"
+                                                Text="&#xf004;"
+                                                FontFamily="{Binding LikeStatus.FontFamily}" />
+                                            <Label
+                                                Text="{Binding LikeCountText}"
+                                                VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </FlexLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <FlexLayout
+                x:Name="PaginationArea"
+                JustifyContent="SpaceBetween"
+                Padding="5,10,10,5"
+                AlignContent="Center"
+                AlignItems="Center">
+                <Button
+                    Clicked="PaginationBeforeClicked"
+                    x:Name="PaginationBefore"
+                    Text="&#xf104;"
+                    FontFamily="fa-solid-900.ttf#Font Awesome 5 Free"
+                    BackgroundColor="Transparent" />
+                <Label
+                    x:Name="PaginationSummary" />
+                <Button
+                    Clicked="PaginationAfterClicked"
+                    x:Name="PaginationAfter"
+                    Text="&#xf105;"
+                    FontFamily="fa-solid-900.ttf#Font Awesome 5 Free"
+                    BackgroundColor="Transparent" />
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

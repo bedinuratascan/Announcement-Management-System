@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Pages="clr-namespace:MobAnnouncApp.Views"
+    x:Class="MobAnnouncApp.Views.MainPage"
+    NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Master>
+        <ContentPage
+            Title="Menü"
+            BackgroundColor="#e8e8e8">
+            <FlexLayout
+                Direction="Column"
+                Wrap="NoWrap"
+                JustifyContent="Start"
+                AlignContent="Center"
+                Padding="10"
+                AlignItems="Stretch">
+                <Label
+                    Text="{Binding menu.Welcome}"
+                    TextColor="Black"
+                    Margin="0, 10, 0, 10"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center" />
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <Label
+                    Text="Genel"
+                    VerticalTextAlignment="Center"
+                    FontSize="Small"
+                    Padding="10,0,0,0"
+                    HorizontalTextAlignment="Left"
+                    TextColor="Gray" />
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <ListView
+                    ItemsSource="{Binding menu.GeneralItems}"
+                    RowHeight="40"
+                    SeparatorVisibility="Default"
+                    BackgroundColor="#e8e8e8"
+                    HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never"
+                    ItemTapped="MenuItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Title}"
+                                       VerticalTextAlignment="Center"
+                                        TextColor="Black" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <Label
+                    Text="Siz"
+                    VerticalTextAlignment="Center"
+                    FontSize="Small"
+                    Padding="10,0,0,0"
+                    HorizontalTextAlignment="Left"
+                    TextColor="Gray" />
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <ListView
+                    ItemsSource="{Binding menu.ProfileItems}"
+                    RowHeight="40"
+                    SeparatorVisibility="None"
+                    BackgroundColor="#e8e8e8"
+                    HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never"
+                    ItemTapped="MenuItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Title}"
+                                       VerticalTextAlignment="Center"
+                                       TextColor="Black" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <Label
+                    Text="İşlemler"
+                    VerticalTextAlignment="Center"
+                    FontSize="Small"
+                    Padding="10,0,0,0"
+                    HorizontalTextAlignment="Left"
+                    TextColor="Gray" />
+                <BoxView
+                    Color="#c6c6c6"
+                    HeightRequest="1"
+                    Margin="-5, 10, -5, 10"/>
+                <ListView
+                    ItemsSource="{Binding menu.ActionItems}"
+                    RowHeight="40"
+                    SeparatorVisibility="None"
+                    BackgroundColor="#e8e8e8"
+                    HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never"
+                    ItemTapped="MenuItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Title}"
+                                       VerticalTextAlignment="Center"
+                                       TextColor="Black" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </FlexLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <Pages:AnnouncementListPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

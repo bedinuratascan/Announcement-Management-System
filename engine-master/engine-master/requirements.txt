@@ -1,0 +1,11 @@
+Flask~=1.1.2
+celery~=4.4.4
+pyodbc~=4.0.30
+pandas~=1.0.4
+numpy~=1.18.5
+scipy~=1.4.1
+scikit-learn~=0.23.1
+implicit~=0.4.2
+Faker~=4.1.0
+redis~=3.5.3
+future~=0.18.2

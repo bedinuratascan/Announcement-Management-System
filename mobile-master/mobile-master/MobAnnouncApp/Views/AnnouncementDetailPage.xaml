@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MobAnnouncApp.Views.AnnouncementDetailPage"
+    x:Name="PageTitle">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label
+                x:Name="Title"
+                FontAttributes="Bold"
+                FontSize="Title"
+                TextColor="Black" />
+            <Label x:Name="Contents" />
+            <FlexLayout
+                Direction="Row"
+                Wrap="NoWrap"
+                JustifyContent="SpaceBetween"
+                AlignItems="Center"
+                AlignContent="Center">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        VerticalTextAlignment="Center"
+                        Text="&#xf007;"
+                        FontFamily="fa-regular-400.ttf#Font Awesome 5 Free" />
+                    <Label
+                        x:Name="Author"
+                        VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        x:Name="LikeIcon"
+                        VerticalTextAlignment="Center"
+                        Text="&#xf004;" />
+                    <Label
+                        x:Name="Like"
+                        VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
